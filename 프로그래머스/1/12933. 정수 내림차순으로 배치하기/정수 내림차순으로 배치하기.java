@@ -2,13 +2,21 @@ import java.util.*;
 
 class Solution {
     public long solution(long n) {
-        String[] arr = Long.toString(n).split(""); // 숫자를 문자열 배열로 변환
+        List<Long> list = new ArrayList<Long>();
+        
+        while(n>0) {
+                long tempNum = n % 10;
+                list.add(tempNum);
+                n /= 10;
+            }
+        Collections.sort(list);
+        Collections.reverse(list);
 
-        Arrays.sort(arr, Comparator.reverseOrder()); // 내림차순 정렬
+        StringBuilder sb = new StringBuilder();
+        for (Long digit : list) {
+            sb.append(digit.toString()); // Long을 String으로 변환하여 추가
+        }
 
-        String str = String.join("", arr); // 문자열 배열을 하나의 문자열로 합치기
-        long answer = Long.parseLong(str); // 문자열을 long 타입으로 변환
-
-        return answer;
-    }
+        return Long.parseLong(sb.toString());
+        }
 }
