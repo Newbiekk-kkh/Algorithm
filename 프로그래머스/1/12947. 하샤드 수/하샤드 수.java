@@ -4,16 +4,17 @@ class Solution {
         int sum = 0;
         int tempNum = x;
         
-        for (int i = 0 ; i<5 ; i++) {
-            sum += tempNum%10;
+        while (tempNum >=1) {
+            sum += tempNum % 10;
             tempNum /= 10;
         }
         
-        if (x%sum == 0) {
+        if (x % sum == 0) {
             answer = true;
         } else {
             answer = false;
         }
+        
         
         return answer;
     }
