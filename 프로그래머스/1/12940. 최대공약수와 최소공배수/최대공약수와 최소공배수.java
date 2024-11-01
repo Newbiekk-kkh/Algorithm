@@ -13,9 +13,9 @@ class Solution {
         
         answer[0] = a.get(a.size()-1);
         
-        for (int i = 1 ; i < 10000000 ; i++) {
+        for (long i = 1 ; i <= n*m ; i++) {
             if (i%n == 0 && i%m == 0) {
-                answer[1] = i;
+                answer[1] = (int)i;
                 break;
             }
         }
