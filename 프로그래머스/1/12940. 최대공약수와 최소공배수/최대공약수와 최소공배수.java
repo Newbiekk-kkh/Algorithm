@@ -11,13 +11,7 @@ class Solution {
         }
         
         answer[0] = a;
-        
-        for (long i = 1 ; i <= n*m ; i++) {
-            if (i%n == 0 && i%m == 0) {
-                answer[1] = (int)i;
-                break;
-            }
-        }
+        answer[1] = (n * m) / a ;
         
         
         return answer;
