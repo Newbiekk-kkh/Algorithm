@@ -12,14 +12,8 @@ class Solution {
             }
         }
         
-        String[] str = new String[lottos.length];
-        
         for (int i = 0; i < lottos.length; i++) {
-            str[i] = "" + lottos[i];
-        }
-        
-        for (int i = 0; i < lottos.length; i++) {
-            if (str[i].equals("0")) {
+            if (lottos[i] == 0) {
                 cnt++;
             }
         }
