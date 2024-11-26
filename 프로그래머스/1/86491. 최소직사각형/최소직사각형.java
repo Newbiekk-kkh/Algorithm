@@ -1,8 +1,8 @@
 class Solution {
     public int solution(int[][] sizes) {
         int answer = 0;
-        int maxGaro = 0;
-        int maxSero = 0;
+        int maxWidth = 0;
+        int maxHeight = 0;
         
         for (int i= 0; i<sizes.length; i++) {
             if (sizes[i][1] > sizes[i][0]) {
@@ -13,16 +13,16 @@ class Solution {
         }
         
         for (int i = 0; i<sizes.length ; i++) {
-            if (sizes[i][0] >= maxGaro) {
-                maxGaro = sizes[i][0];
+            if (sizes[i][0] >= maxWidth) {
+                maxWidth = sizes[i][0];
             }
             
-            if (sizes[i][1] >= maxSero) {
-                maxSero = sizes[i][1];
+            if (sizes[i][1] >= maxHeight) {
+                maxHeight = sizes[i][1];
             }
         }
         
-        answer = maxGaro * maxSero;
+        answer = maxWidth * maxHeight;
         
         return answer;
     }
