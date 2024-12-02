@@ -3,13 +3,13 @@ import java.util.*;
 class Solution {
     public int[] solution(int k, int[] score) {
         int[] answer = new int[score.length];
-        List<Integer> hallOfFame = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
 
         for (int i = 0; i < score.length; i++) {
-            hallOfFame.add(score[i]);
-            Collections.sort(hallOfFame, Collections.reverseOrder());
+            list.add(score[i]);
+            Collections.sort(list, Collections.reverseOrder());
             
-            answer[i] = hallOfFame.get(Math.min(i, k - 1)); // k보다 작으면 i번째, k보다 크면 k-1번째
+            answer[i] = list.get(Math.min(i, k - 1));
         }
 
         return answer;
