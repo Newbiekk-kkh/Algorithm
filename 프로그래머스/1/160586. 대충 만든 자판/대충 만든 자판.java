@@ -18,6 +18,7 @@ class Solution {
                         }
                     }  
                 }
+                
                 Arrays.sort(index);
                 
                 // index의 0이 아닌 최솟값 -> targets의 각 문자열의 문자하나를 누르는데 최솟값
@@ -34,7 +35,7 @@ class Solution {
                     break;
                 }
             }
-            
+        
             answer[i] = sum;
         }
         
