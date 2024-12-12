@@ -18,9 +18,9 @@ class Solution {
                         }
                     }  
                 }
-                // index의 값이 0 또는 값
                 Arrays.sort(index);
                 
+                // index의 0이 아닌 최솟값 -> targets의 각 문자열의 문자하나를 누르는데 최솟값
                 for (int m = 0; m < index.length; m++) {
                     if (index[m] != 0) {
                         sum += index[m];
@@ -28,6 +28,7 @@ class Solution {
                     }
                 }
                 
+                // index의 최댓값이 0 -> 만들지 못하는 문자열이므로 -1
                 if (index[keymap.length-1] == 0) {
                     sum = -1;
                     break;
