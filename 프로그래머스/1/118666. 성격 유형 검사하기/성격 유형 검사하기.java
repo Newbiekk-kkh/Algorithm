@@ -16,10 +16,10 @@ class Solution {
         
         StringBuilder sb = new StringBuilder("");
         
-        sb = totalScore[0] >= totalScore[1] ? sb.append("R") : sb.append("T");
-        sb = totalScore[2] >= totalScore[3] ? sb.append("C") : sb.append("F");
-        sb = totalScore[4] >= totalScore[5] ? sb.append("J") : sb.append("M");
-        sb = totalScore[6] >= totalScore[7] ? sb.append("A") : sb.append("N");
+        sb.append(totalScore[0] >= totalScore[1] ? "R" : "T");
+        sb.append(totalScore[2] >= totalScore[3] ? "C" : "F");
+        sb.append(totalScore[4] >= totalScore[5] ? "J" : "M");
+        sb.append(totalScore[6] >= totalScore[7] ? "A" : "N");
             
         String answer = sb.toString();
         return answer;
