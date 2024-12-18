@@ -12,18 +12,23 @@ class Solution {
                 }
             }
         }
-        int[] a = list.get(0);
-        int[] b = list.get(list.size()-1);
-        int[] d = new int[list.size()];
+        
+        int lux = list.get(0)[0];
+        int rdx = list.get(list.size()-1)[0] + 1;
+        
+        int[] luyRdy = new int[list.size()];
         
         for(int i = 0; i < list.size(); i++) {
-            int[] c = list.get(i);
-            d[i] = c[1];
+            int[] d = list.get(i);
+            luyRdy[i] = d[1];
         }
         
-        Arrays.sort(d);
+        Arrays.sort(luyRdy);
         
-        int[] answer = {a[0], d[0], b[0]+1, d[d.length-1]+1};
+        int luy = luyRdy[0];
+        int rdy = luyRdy[luyRdy.length-1] + 1;
+        
+        int[] answer = {lux, luy, rdx, rdy};
         
         return answer;
     }
