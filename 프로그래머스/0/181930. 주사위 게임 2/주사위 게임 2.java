@@ -2,24 +2,16 @@ class Solution {
     public int solution(int a, int b, int c) {
         int answer = 0;
         
-        if (a != b && b != c && a != c) {
-            return a + b + c;
-        }
-        
-        if (a == b && b != c) {
-            return (a + b + c) * (a*a + b*b + c*c);
-        }
-        
-        if (a == c && c != b) {
-            return (a + b + c) * (a*a + b*b + c*c);
-        }
-
-        if (b == c && b != a) {
-            return (a + b + c) * (a*a + b*b + c*c);
-        }
+        int sum1 = a + b + c;
+        int sum2 = (a + b + c) * (a*a + b*b + c*c);
+        int sum3 = (a + b + c) * (a*a + b*b + c*c) * (a*a*a + b*b*b + c*c*c);
         
         if (a == b && b == c) {
-            return (a + b + c) * (a*a + b*b + c*c) * (a*a*a + b*b*b + c*c*c);
+            answer = sum3;
+        } else if (a == b || b == c || a == c) {
+            answer = sum2;
+        } else {
+            answer = sum1;
         }
         
         return answer;
